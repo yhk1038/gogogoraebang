@@ -1,0 +1,63 @@
+
+<div class="bj_note" style="margin-top:100px;">
+  <center>
+    <img src="/image/icon/plustolist_icon_etc.png" class="icon_etc">&nbsp;&nbsp;&nbsp;
+    <img src="/image/icon/plustolist_icon_joy.png" class="icon_joy"/>&nbsp;&nbsp;&nbsp;
+    <img src="/image/icon/plustolist_icon_lovely.png" class="icon_lovely"/>&nbsp;&nbsp;&nbsp;
+    <img src="/image/icon/plustolist_icon_sad.png" class="icon_sad"/>&nbsp;&nbsp;&nbsp;
+    <img src="/image/icon/plustolist_icon_stress.png" class="icon_stress"/>
+  </center>
+</div>
+
+
+<input type="image" src="/image/plus_icon.png" style=class="btn btn-info btn-lg" data-toggle="modal" data-target="#plus_modal"></button>
+ <!-- 카드 추가 모달 -->
+  <div class="modal fade bs-example-modal-lg" id="plus_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content plus_content" style="border-radius: 30px;">
+        <div class="modal-body plus_body" style="padding: 25px;">
+          <div class="row">
+            <button type="button" class="close" data-dismiss="modal" style="padding-right:10px;">&times;</button>
+          </div>
+          <div class="row">
+            <!--모달 카드이미지-->
+            <div class="col-xs-6">
+              <center>
+                <div class="card_box">
+                  <p class="card_hash">#끼부리기좋음1</p>    
+                  <img src="/image/albumart_1.png" class="card_image">
+                  <p class="card_song">고래의꿈<br></p>
+                  <p class="card_singer">바비킴</p>
+                </div>
+              </center>
+            </div>
+            <!--모달 카드내용-->
+            <div class="col-xs-6" style="margin-top: 27px; padding: 0px;">
+              <div class="plus_right">
+                <p class="plus_songname">고래의꿈</p>
+                <p class="plus_singer">바비킴</p>
+                <p class="plus_comment"><b>해시태그</b>를 입력해주세요<span style="font-size:8px">(10자 이내)</span></p>
+                <input type="text" name='' class="plus_input" placeholder="#나만의코멘트" value= ""></input>
+                <p class="plus_comment">음악에 어울리는 <b>감정상태</b>를 선택해주세요</p>
+                <div class="row" style="padding-left: 6px;">
+                  <center>
+                    <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_joy.png" class="emotion_icon"/><br><p class="emotion_font">신남</p></div>
+                    <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_sad.png" class="emotion_icon"/><br><p class="emotion_font">우울</p></div>
+                    <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_stress.png" class="emotion_icon"/><br><p class="emotion_font">스트레스</p></div>                    
+                    <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_lovely.png" class="emotion_icon"/><br><p class="emotion_font">설렘</p></div>
+                    <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_etc.png" class="emotion_icon"/><br><p class="emotion_font">기타</p></div>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <center>
+            <button type="button" class="plus_modal_btn">저장하고 내 라인업 가기</button>&nbsp;&nbsp;
+            <button type="button" class="plus_modal_btn">저장하고 계속 검색하기</button>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
