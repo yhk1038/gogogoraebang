@@ -1,0 +1,887 @@
+@font-face {
+  font-family: 'KoPub Dotum';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Light.eot);
+  src: url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Light.eot?#iefix) format('embedded-opentype'),
+       url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Light.woff) format('woff'),
+       url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Light.ttf) format('truetype');
+}
+@font-face {
+ font-family: 'KoPub Dotum';
+ font-style: normal;
+ font-weight: 400;
+ src: url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Medium.eot);
+ src: url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Medium.eot?#iefix) format('embedded-opentype'),
+ url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Medium.woff) format('woff'),
+ url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'KoPub Dotum';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Bold.eot);
+  src: url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Bold.eot?#iefix) format('embedded-opentype'),
+       url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Bold.woff) format('woff'),
+       url(//cdn.jsdelivr.net/font-kopub/1.0/KoPubDotum-Bold.ttf) format('truetype');
+}
+
+body { 
+    background-image: url(/image/whale_background.png);
+    background-repeat:repeat-y;
+    background-size: cover;
+}
+
+/*-----------------로그인 페이지-----------------*/
+
+.login{
+    margin-top: 237px;
+}
+.whale_title{
+    margin-top: 35px;
+    width: 330px;
+    margin-left: 0px;
+}
+.button{
+  color: #3195e4;
+  width:153px; 
+  border:0px; 
+  background-color: #baeaff; 
+  height:27px;
+  font-weight:bold;
+  border-radius:18px;
+  font-size:13px;
+  }
+  
+/* 입력창 */
+.input{
+  color:black; 
+  border:0px; 
+  background-color: #baeaff; 
+  height:27px;
+  border-radius:18px;
+  font-weight:bold;
+  font-size:13px;
+  text-align: center;
+  width: 315px;
+  margin-bottom: 15px;    
+  }
+
+.join_button{
+  padding-left:5px;  
+}
+
+
+/* 이메일주소, 비밀번호 */
+.whale_text{
+  text-align:left;
+  font-weight:bold;
+  font-size:13px;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* 메인 중앙 로고 */
+.whale_title_main{
+   width: 280px;
+   margin-top: 20px;
+  }
+
+.modal-content{
+  background-image: url(/image/whale_background.png);
+  background-repeat:repeat-y;
+  background-size: cover;
+  }
+
+.join_input{
+   color:black; 
+   border:0px; 
+   background-color: #baeaff; 
+   height:33px;
+   border-radius:18px;
+   font-weight:bold;
+   font-size:13px;
+   text-align: center;
+   width: 315px;
+  }
+
+.info1{
+  width: 1100px;
+}
+.info2{
+  width: 1100px;
+}
+.info3{
+  width: 1100px;
+}
+.info4{
+  width: 1100px;
+}
+.login_tri{
+  opacity:0.5;
+  width: 30px;
+}
+
+
+/*-----------------초기 페이지-----------------*/
+.firstpage{
+  margin-top: 70px;
+}
+
+.first_logo{
+  width: 280px;
+}
+
+.first_image{
+  width: 215px;
+  height: 215px;
+}
+
+.first_plus{
+  width: 45px;  
+}
+
+.first_comment{
+  color: white;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+
+/*-----------------메인 페이지-----------------*/
+
+.main{
+  padding-left: 15px;
+}
+
+/*네비게이션 바*/
+.navbar{
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+
+/* 네비게이션바 글씨 */
+.nav_text{
+  position: relative;
+  font-size: 15px;
+  color: white;
+  }
+
+.nav_text:hover {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 0.14em solid white;
+}
+
+.nav_text:link {
+  color: white;
+  text-decoration: none;
+}
+
+.main_button{
+  color: #3195e4;
+  border: 0px; 
+  background-color: #baeaff; 
+  font-weight: normal;
+  border-radius: 18px;
+  font-size: 12px;
+  width: 88px;
+  height: 19px;
+  }
+  
+/* 유저정보 */
+.user_info{
+  padding-top: 15px;
+  text-align: right;
+}
+
+.user_logo{
+  width: 50px;
+  margin-bottom: 10px;
+}
+.user_text{
+  color: white;
+  font-size: 13px;
+  margin-left: 50px;
+  padding-right: 0px;
+  text-align: right;
+  margin-bottom: 7px;
+  
+}
+.user_total{
+  text-align:left;
+}
+
+.user_total__up{
+  font-size: 13px;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  font-style: normal;
+}
+.user_total__down{
+  font-size: 13px;
+  color: white;
+}
+.small_icon{
+  width: 14px;
+  margin-right: 3px;
+}
+
+
+/* 카드 내용물 */
+#outside{
+  padding-top: 10px;
+  margin-bottom: 20px;
+  }
+
+
+.card_box{
+  background-color: #1496ef;
+  width: 215px;
+  height: 315px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  }
+
+.card_image{
+  width: 213px;
+  height: 213px;
+  background-image: url(/image/albumart_1.png);
+  }
+
+.card_hash{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  position: relative;
+  font-size: 13px;
+  color: white;
+  }
+
+.card_singer{
+  position: relative;
+  font-size: 13px;
+  color: white;
+  font-weight: lighter;
+  margin-top: 7px;
+  }
+
+.card_song{
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  }
+
+.carousel{
+  padding-left: 80px;
+  padding-right: 80px;
+  
+}
+
+.carousel-indicators{
+  top: 700px;
+  padding-bottom: 40px;
+}
+
+.card_emotion{
+  width: 20px;
+  margin-left: 5px;
+  cursor: default;
+  height: 21px;
+  margin-top: 9px;
+
+  
+}
+
+.card_trash{
+  width: 18px;
+  height: auto;
+
+}
+
+
+/*---------------------검색하기 페이지---------------------*/
+
+.search_bar{
+  margin-bottom: 20px;
+}
+
+.search_input{
+    color: #007ff8;
+    border: 0px;
+    background-color: #d5f2ff;
+    font-weight: bold;
+    border-radius: 18px;
+    font-size: 13px;
+    width: 530px;
+    height: 35px;
+    padding-top: 0px;
+    padding-left: 20px;
+    margin-right: 10px;
+    
+}
+
+.search_button{
+    color: #007ff8;
+    border: 0px;
+    background-color: #d5f2ff;
+    font-weight: bold;
+    border-radius: 18px;
+    font-size: 13px;
+    width: 130px;
+    height: 35px;
+}
+
+
+.output_song{
+    color: white;
+    border: 0px;
+    background-color: #44c5ff;
+    font-weight: normal;
+    border-radius: 18px;
+    font-size: 13px;
+    width: 530px;
+    height: 35px;
+    margin-right: 10px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.song_name{
+    padding-left:5px;
+    padding-top:8px;
+}
+
+
+.output_singer{
+    color: white;
+    border: 0px;
+    background-color: #44c5ff;
+    font-weight: normal;
+    border-radius: 18px;
+    font-size: 13px;
+    width: 130px;
+    height: 35px;
+    padding-top: 8px;
+    text-align: center;
+    margin-left: 6px;
+  
+}
+
+.plus_button{
+    width: 20px;
+    border: 0; 
+    background: transparent;
+}
+
+.plus_newbtn{
+    width: 33px;
+    padding-left: 0px;
+    padding-top: 4px;
+    margin-left: 13px;
+}
+
+.plus_image{
+    margin-top: 4px;
+    height: 27px;
+    margin-left: 17px;
+}
+
+/* 수직 carousel */
+
+#carousel-example-vertical{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.carousel.vertical .carousel-inner {
+    height: 100%;
+}
+.carousel.vertical .carousel-inner > .item {
+    width: auto;
+    padding-right: 50px;
+    -webkit-transition: 0.6s ease-in-out top;
+            transition: 0.6s ease-in-out top;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel.vertical .carousel-inner > .item {
+    -webkit-transition: 0.6s ease-in-out;
+            transition: 0.6s ease-in-out;
+  }
+  .carousel.vertical .carousel-inner > .item.next, .carousel.vertical .carousel-inner > .item.active.right {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    top: 0;
+  }
+  .carousel.vertical .carousel-inner > .item.prev, .carousel.vertical .carousel-inner > .item.active.left {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    top: 0;
+  }
+  .carousel.vertical .carousel-inner > .item.next.left, .carousel.vertical .carousel-inner > .item.prev.right, .carousel.vertical .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    top: 0;
+  }
+}
+.carousel.vertical .carousel-inner > .active,
+.carousel.vertical .carousel-inner > .next,
+.carousel.vertical .carousel-inner > .prev {
+  display: block;
+}
+.carousel.vertical .carousel-inner > .active {
+  top: 0;
+}
+.carousel.vertical .carousel-inner > .next,
+.carousel.vertical .carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.carousel.vertical .carousel-inner > .next {
+  top: 100%;
+}
+.carousel.vertical .carousel-inner > .prev {
+  top: -100%;
+}
+.carousel.vertical .carousel-inner > .next.left,
+.carousel.vertical .carousel-inner > .prev.right {
+  top: 0;
+}
+.carousel.vertical .carousel-inner > .active.left {
+  top: -100%;
+}
+.carousel.vertical .carousel-inner > .active.right {
+  top: 100%;
+}
+
+.carousel.vertical .carousel-control {
+  width: 50px;
+}
+.carousel.vertical .carousel-control.up {
+  top: 0;
+  right: 0;
+}
+.carousel.vertical .carousel-control.down {
+  right: 0;
+  bottom: 0;
+}
+.carousel.vertical .carousel-control .icon-prev,
+.carousel.vertical .carousel-control .icon-next,
+.carousel.vertical .carousel-control .glyphicon-chevron-up,
+.carousel.vertical .carousel-control .glyphicon-chevron-down {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+.carousel.vertical .carousel-control .icon-prev,
+.carousel.vertical .carousel-control .glyphicon-chevron-up {
+  left: 50%;
+  margin-left: -10px;
+  top: 50%;
+  margin-top: -10px;
+}
+.carousel.vertical .carousel-control .icon-next,
+.carousel.vertical .carousel-control .glyphicon-chevron-down {
+  left: 50%;
+  margin-left: -10px;
+  top: 50%;
+  margin-top: -10px;
+}
+.carousel.vertical .carousel-control .icon-up,
+.carousel.vertical .carousel-control .icon-down {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-family: serif;
+}
+.carousel.vertical .carousel-control .icon-prev:before {
+  content: '\2039';
+}
+.carousel.vertical .carousel-control .icon-next:before {
+  content: '\203a';
+}
+    
+.plus_button1{
+  border: 0px;
+  background-color: transparent;
+  
+}
+.plus_button2{
+  border: 0px;
+  background-color: transparent;
+}
+.plus_button3{
+  border: 0px;
+  background-color: transparent;
+}
+.plus_button4{
+  border: 0px;
+  background-color: transparent;
+}
+.plus_button5{
+  border: 0px;
+  background-color: transparent;
+}
+.plus_button6{
+  border: 0px;
+  background-color: transparent;
+}
+.plus_button7{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button8{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button9{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button10{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button11{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button12{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button1{
+  border: 0px;
+  background-color: transparent;
+}
+
+.plus_button1{
+  border: 0px;
+  background-color: transparent;
+}
+
+
+
+
+/*노래 추가 모달*/
+#plus_modal{
+  color: white;
+}
+
+.plus_dialog{
+  background-image: url(/image/whale_background.png);
+  background-repeat:repeat-y;
+  background-size: cover;
+  
+}
+
+.plus_content{
+  left: 145px;
+  height: 430px; 
+  width: 600px;
+}
+
+.plus_right{
+  padding-left: 0px;
+  margin-top:10px;
+}
+
+.plus_songname{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  
+}
+
+.plus_comment{
+  font-size: 13px;  
+}
+
+.plus_input{
+  width:225px;
+  border-radius: 45px;
+  background-color: white;
+  color: #1a9afc;
+  font-size: 13px;
+  border: 0px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.emotion{
+  cursor: pointer;
+  display: block;
+  width: 40px;
+  height: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}
+
+.emotion_font{
+  font-size: 12px;
+  padding-top: 3px;
+  color: white;
+}
+
+.plus_modal_btn{
+  width: 165px;
+  height: 26px;
+  border-radius: 15px;
+  border: 0px;
+  background-color: #1789fb;
+  color: white;
+  font-weight: bold;
+}
+
+/*------------------- 비슷한 리스트 페이지-------------------*/
+
+.similar_card{
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+}
+
+.my_list {
+    background-color: rgba(85, 212, 255, 0.43);
+    width: 320px;
+    height: 440px;
+    border: none;
+    border-radius: 17px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.your_list {
+    background-color: rgba(85, 212, 255, 0.43);
+    width: 320px;
+    height: 440px;
+    border: none;
+    border-radius: 17px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.list_logo{
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.similar_username{
+  color: white;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.similar_userinfo{
+  color:white;
+  font-size:12px;
+}
+
+.similar_song {
+  padding-right: 0px;
+  padding-left: 11px;
+  padding-top: 11px;
+}
+
+ 
+.similar_content{
+  color: white;
+  font-size: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.similar_tag{
+  color: white;
+  font-size: 11px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.similar_songname{
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.similar_plus{
+  padding-left: 0px;
+  margin-left: 12px;
+  width: 27px;
+  margin-top: 12px;
+}
+
+.similar_albumart{
+  width: 55px;
+  border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+.similar_icon{
+  width: 37px;
+}
+
+.similar_text{
+  font-size: 14px;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 80px;
+
+}
+
+.similar_value{
+  width: 180px;
+  height: 180px;
+  background-color: white;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+  border-radius: 150px;
+}
+.similar_circle{
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+  line-height: 175px;
+  text-align: center;
+}
+
+.similar_circle:hover {
+  color: black;
+  text-decoration: none;
+
+}
+
+.similar_dotline{
+  width: 347px;
+  line-height: 100px;
+  margin-top: 86px;
+}
+
+/*---------------태그 검색 페이지-------------------*/
+.emotion.joy[type="radio"]{
+  content: url('/image/icon/plustolist_icon_joy.png');
+}
+
+.emotion.joy[type="radio"]:checked {
+  content: url('/image/icon/joy_blue1.png');
+}
+
+.emotion.lovely[type="radio"]{
+  content: url('/image/icon/plustolist_icon_lovely.png');
+}
+
+.emotion.lovely[type="radio"]:checked {
+  content: url('/image/icon/lovely_blue1.png');
+}
+
+.emotion.sad[type="radio"]{
+  content: url('/image/icon/plustolist_icon_sad.png');
+}
+
+.emotion.sad[type="radio"]:checked {
+  content: url('/image/icon/sad_blue1.png');
+}
+
+.emotion.stress[type="radio"]{
+  content: url('/image/icon/plustolist_icon_stress.png');
+}
+
+.emotion.stress[type="radio"]:checked {
+  content: url('/image/icon/stress_blue1.png');
+}
+
+.emotion.etc[type="radio"]{
+  content: url('/image/icon/plustolist_icon_etc.png');
+}
+
+.emotion.etc[type="radio"]:checked {
+    content: url('/image/icon/etc_blue1.png');
+}
+
+.emotion_choice{
+  margin-left: 380px;
+  margin-right: 380px;
+}
+
+.ts_text{
+  font-size: 14px;
+  padding-top: 3px;
+  color: white;
+
+}
+.tagsearch_input{
+    color: white;
+    border: 0px;
+    background-image: url(/image/tagsearch_bar.png);
+    background-repeat: no-repeat; 
+    background-position: center;
+    font-weight: bold;
+    border-radius: 37px;
+    font-size: 40px;
+    width: 555px;
+    height: 73px;
+    padding-top: 0px;
+    padding-left: 60px;
+    margin-right: 10px;
+}
+
+.emotion.tag{
+  width: 50px;
+}
+.search_icon{
+  
+}
+
+/* 연습용 */
+#popup{
+  color:red; 
+  border:0px; 
+  background-color: #baeaff; 
+  border-radius:18px;
+  font-weight:bold;
+  font-size:13px;
+  text-align: center;
+  width: 315px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  padding-left: 43px;
+  margin-left: 394px;
+  margin-top: 35px;
+  height: 27px; 
+}
+
+.plus_button .showdetail .btn .btn-primary .btn-sm {
+  background-image: url(images/cancel.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 50px;
+  width: 200px;
+  border: none;
+}
+
+button span {
+  display: none;
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +14,11 @@
  *= require_tree .
  *= require_self
  */
+=======
+@font-face{
+font-family:NotoSans-Regular;
+src:url('/fonts/NotoSans-Regular.eot');
+src:local(※),
+url('/fonts/NotoSans-Regular.woff') format('woff');
+}
+>>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c

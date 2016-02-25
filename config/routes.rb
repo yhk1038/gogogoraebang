@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +54,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+ 
+devise_for :users, controllers:  {
+  registrations: 'users/registrations'
+  }
+  root :to => "whale#login"
+  match ":controller(/:action(/:id))", :via => [:post, :get]
+  
+>>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
 end

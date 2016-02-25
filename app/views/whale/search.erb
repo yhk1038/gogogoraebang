@@ -1,0 +1,308 @@
+<div class="search">
+<%= render :partial => 'whale/navbar' %>
+
+  <!--검색 창-->
+  <div class="search_bar">
+    <center>
+      <div class="row">
+        <form action="/whale/search" method="POST">
+          <input type="text" placeholder="검색어를 입력하세요" class="search_input" name="search_sing"></input>
+          <button class="search_button">검색하기</button>
+        </form>
+      </div>
+    </center>
+  </div>
+  
+  <% unless @showing_array_title1.nil?  %>
+  <% @search_check_number = 0 %>
+  <!--검색 결과-->
+  <div id="carousel-example-vertical" class="carousel vertical slide"  data-interval="false">
+  <center>
+    <div class="carousel-inner" role="listbox" style="margin-left: 56px; width: 730px;">
+            <!-- 1장이상인데 딱 떨어질 경우 -->
+            <% if ((@showing_array_title.size/6) >= 1) && ((@showing_array_title.size%6) == 0) %>
+              <div class="item active">
+                  <p class="ticker-headline">
+                    <% for a in (1..6) %>
+                      <!--검색 결과값-->
+                      <div class="row" style="margin-bottom: 14px;">
+                        <!--노래 제목-->
+                        <div class="col-md-9">
+                          <div class="output_song">
+                            <div class="col-md-10" style="padding-top: 0.6em;">
+                            <%= @showing_array_title[@search_check_number] %>
+                            </div>
+
+                            <!--추가 버튼-->
+                                <% unless @showing_array_title[@search_check_number].nil?  %>
+                                <div class="col-md-2" style="padding-left: 36px;">
+                                  <div class="songdetail" data-title="<%= @showing_array_title[@search_check_number] %>" data-singer="<%= @showing_array_singer[@search_check_number] %>" data-album_img="<%= @showing_array_album[@search_check_number] %>" data-song_id="<%= @showing_array_id[@search_check_number] %>">
+                                    <button type="button" class="plus_button showdetail btn btn-primary btn-sm" id="button<%= @showing_array_id %>" data-toggle="modal" data-target="#newModal"></button>
+                                  </div>
+                                </div>
+                                <% end %>
+                          </div>
+                        </div>
+                        <!--가수명-->
+                        <center>
+                          <div class="col-md-3">  
+                            <div class="output_singer">
+                            <%= @showing_array_singer[@search_check_number] %>
+                            <% @search_check_number = @search_check_number + 1 %>
+                            </div>
+                          </div>
+                        </center>
+                      </div>
+                    <% end %>
+                  </p>
+              </div>
+              <% for a in (1..((@showing_array_title.size/6)-1)) %>
+              <div class="item">
+                <p class="ticker-headline">
+                  <% for s in (1..6) %>
+                    <div class="row" style="margin-bottom: 14px;">
+                      <!--노래 제목-->
+                      <div class="col-md-9">
+                        <div class="output_song">
+                          <div class="col-md-10" style="padding-top: 0.6em;">
+                          <%= @showing_array_title[@search_check_number] %>
+                          </div>
+                          <!--추가 버튼-->
+                                <% unless @showing_array_title[@search_check_number].nil?  %>
+                                <div class="col-md-2" style="padding-left: 36px;">
+                                  <div class="songdetail" data-title="<%= @showing_array_title[@search_check_number] %>" data-singer="<%= @showing_array_singer[@search_check_number] %>" data-album_img="<%= @showing_array_album[@search_check_number] %>" data-song_id="<%= @showing_array_id[@search_check_number] %>">
+                                  <button type="button" class="plus_button showdetail btn btn-primary btn-sm" id="button<%= @showing_array_id %>" data-toggle="modal" data-target="#newModal"></button>
+                                  </div>
+                                </div>
+                                <% end %>
+                        </div>
+                      </div>
+                      <!--가수명-->
+                      <center>
+                        <div class="col-md-3">  
+                          <div class="output_singer">
+                          <%= @showing_array_singer[@search_check_number] %>
+                          <% @search_check_number = @search_check_number + 1 %>
+                          </div>
+                        </div>
+                      </center>
+                    </div>
+                  <% end %>
+                </p>
+              </div>
+              <% end %>    
+            <!-- 1장이상인데 딱떨어지지 않을 경우 -->  
+            <% elsif ((@showing_array_title.size/6) >= 1) && ((@showing_array_title.size%6) != 0) %>
+              <div class="item active">
+                <p class="ticker-headline">
+                  <% for a in (1..6) %>
+                  <!--검색 결과값-->
+                  <div class="row" style="margin-bottom: 14px;">
+                    <!--노래 제목-->
+                    <div class="col-md-9">
+                      <div class="output_song">
+                        <div class="col-md-10" style="padding-top: 0.6em;">
+                        <%= @showing_array_title[@search_check_number] %>
+                        </div>
+                        <!--추가 버튼-->
+                                <% unless @showing_array_title[@search_check_number].nil?  %>
+                                <div class="col-md-2" style="padding-left: 36px;">
+                                  <div class="songdetail" data-title="<%= @showing_array_title[@search_check_number] %>" data-singer="<%= @showing_array_singer[@search_check_number] %>" data-album_img="<%= @showing_array_album[@search_check_number] %>" data-song_id="<%= @showing_array_id[@search_check_number] %>">
+                                  <button type="button" class="plus_button showdetail btn btn-primary btn-sm" id="button<%= @showing_array_id %>" data-toggle="modal" data-target="#newModal"></button>
+                                  </div>
+                                </div>
+                                <% end %>
+                      </div>
+                    </div>
+                    <!--가수명-->
+                    <center>
+                      <div class="col-md-3">  
+                        <div class="output_singer">
+                        <%= @showing_array_singer[@search_check_number] %>
+                        <% @search_check_number = @search_check_number + 1 %>
+                        </div>
+                      </div>
+                    </center>
+                  </div>
+                  <% end %>
+                </p>
+              </div>  
+              <% for a in (1..(@showing_array_title.size/6)) %>
+              <div class="item">
+                          <p class="ticker-headline">
+                            <% for s in (1..6) %>      
+                            <div class="row" style="margin-bottom: 14px;">
+                            
+                            <!--노래 제목-->
+                            <div class="col-md-9">
+                              <div class="output_song">
+                                <div class="col-md-10" style="padding-top: 0.6em;">
+                                <%= @showing_array_title[@search_check_number] %>
+                                </div>
+                                <!--추가 버튼-->
+                                <% unless @showing_array_title[@search_check_number].nil?  %>
+                                <div class="col-md-2" style="padding-left: 36px;">
+                                  <div class="songdetail" data-title="<%= @showing_array_title[@search_check_number] %>" data-singer="<%= @showing_array_singer[@search_check_number] %>" data-album_img="<%= @showing_array_album[@search_check_number] %>" data-song_id="<%= @showing_array_id[@search_check_number] %>">
+                                  <button type="button" class="plus_button showdetail btn btn-primary btn-sm" id="button<%= @showing_array_id %>" data-toggle="modal" data-target="#newModal"></button>
+                                  </div>
+                                </div>
+                                <% end %>
+                              </div>
+                            </div>
+                            <!--가수명-->
+                        <center>
+                        <div class="col-md-3">  
+                          <div class="output_singer">
+                            <%= @showing_array_singer[@search_check_number] %>
+                            <% @search_check_number = @search_check_number + 1 %>
+                          </div>
+                        </div>
+                        </center>
+                      </div>
+                            <% end %>
+                          </p>
+                        </div>    
+              <% end %> 
+            <!-- 1장 까지만 나올때 -->         
+            <% else %>
+              <div class="item active">
+                      <p class="ticker-headline">
+                        <% for a in (1..6) %>
+                          <!--검색 결과값-->
+                          <div class="row" style="margin-bottom: 14px;">
+                            <!--노래 제목-->
+                            <div class="col-md-9">
+                              <div class="output_song">
+                                <div class="col-md-10" style="padding-top: 0.6em;">
+                                <%= @showing_array_title[@search_check_number] %>
+                                </div>
+                                <!--추가 버튼-->
+                                <% unless @showing_array_title[@search_check_number].nil?  %>
+                                <div class="col-md-2" style="padding-left: 36px;">
+                                  <div class="songdetail" data-title="<%= @showing_array_title[@search_check_number] %>" data-singer="<%= @showing_array_singer[@search_check_number] %>" data-album_img="<%= @showing_array_album[@search_check_number] %>" data-song_id="<%= @showing_array_id[@search_check_number] %>">
+                                  <button type="button" class="plus_button showdetail btn btn-primary btn-sm" id="button<%= @showing_array_id %>" data-toggle="modal" data-target="#newModal"></button>
+                                  </div>
+                                </div>
+                                <% end %>
+                              </div>
+                            </div>
+                            <!--가수명-->
+                            <center>
+                            <div class="col-md-3">  
+                              <div class="output_singer">
+                                <%= @showing_array_singer[@search_check_number] %>
+                                <% @search_check_number = @search_check_number + 1 %>
+                              </div>
+                            </div>
+                            </center>
+                          </div>
+                        <% end %>
+                      </p>
+                    </div>
+            <% end %>
+    </div>
+        
+
+
+    <!-- Controls -->
+    <a class="up carousel-control" href="#carousel-example-vertical" style="left: 930px; bottom: 79%;" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="down carousel-control" href="#carousel-example-vertical" style="left: 930px; top: 68%;" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </center>
+  </div>
+  <% else %>
+  
+  <% end %>
+  
+  <!-- 카드 추가 모달 -->
+  <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+            <!--모달 카드이미지-->
+
+            <div class="col-xs-6">
+              <center>
+                <div class="card_box">
+                  <p class="card_hash">#끼부리기좋음1</p>    
+                  <div class="card_image">
+                  <p class="card_song">고래의꿈<br></p>
+                  <p class="card_singer">바비킴</p>
+                </div>
+              </center>
+        
+            </div>
+     
+            <!--모달 카드내용-->
+            <div class="col-xs-6" style="margin-top: 27px; padding: 0px;">
+              <div class="plus_right">
+                <p class="plus_songname">...</p>
+                <p class="plus_singer">...</p>
+                <p class="plus_comment"><b>해시태그</b>를 입력해주세요<span style="font-size:8px">(10자 이내)</span></p>
+                <input type="text" name='' class="plus_input" placeholder="#나만의코멘트" value= ""></input>
+                <p class="plus_comment">음악에 어울리는 <b>감정상태</b>를 선택해주세요</p>
+                <div class="row" style="padding-left: 6px;">
+          <form action="/whale/saving_song" method="POST">
+                  <center>
+                    <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion joy" value="1"><p class="emotion_font">신남</p></div>
+                    <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion lovely" value="2"><p class="emotion_font">우울</p></div>
+                    <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion sad" value="3"><p class="emotion_font">스트레스</p></div>                    
+                    <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion stress" value="4"><p class="emotion_font">설렘</p></div>
+                    <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion etc" value="5"><p class="emotion_font">기타</p></div>
+                  </center>
+          <input type="hidden" class="save_song" name="pass_song_id" >
+          <input type="hidden" name="search_sing_name" value= <%= params[:search_sing] %>>
+          <input type="submit" class="btn btn-primary"></button>
+          </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+</div>
+
+
+
+<script>
+$(function(){
+  $(document).on("click", ".showdetail", function () {
+     var mytitle = $(this).parent().data('title');
+     var mysinger = $(this).parent().data('singer');
+     var myalbumimg = $(this).parent().data('album_img');
+     var savesongid = $(this).parent().data('song_id');
+     console.log($(".modal-title"));
+     $(".modal-title").html( mytitle );
+     $(".plus_songname").html( mytitle );
+     $(".plus_singer").html( mysinger );
+     $(".card_song").html( mytitle );
+     $(".card_singer").html( mysinger );
+     $('.card_image').css('background-image', 'url(' + myalbumimg + ')');
+     $(".save_song").val( savesongid );
+
+     
+     
+     
+});
+})
+</script>
+

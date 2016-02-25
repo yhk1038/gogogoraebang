@@ -1,8 +1,16 @@
 source 'https://rubygems.org'
 
+<<<<<<< HEAD
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+=======
+gem 'devise-i18n'
+gem 'similar_text', '~> 0.0.4'
+gem 'devise'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.1'
+>>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -35,9 +43,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+<<<<<<< HEAD
 end
 
 group :development do
+=======
+
+>>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

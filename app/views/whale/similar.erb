@@ -1,0 +1,338 @@
+<div class="similar">
+<%= render :partial => 'whale/navbar' %>
+  <div class="similar_card">
+    <div class="row">
+      <center>
+      <!--내 리스트-->
+      <div class="col-xs-4">
+        <div class="my_list">
+          <!--로고-->
+          <img src="/image/whale_character_1.png" class="list_logo"/>
+          <!--내 아이디-->
+          <center>
+            <div class="similar_user_info">
+              <p class="similar_username"><b><%= current_user.nickname %></b>님의 라인업<%= @test_a %> <img src="/image/song_1.png" class="small_icon"><%= @current_user_list_title.size %> </p>
+                <div class="row" style="padding-top:7px; margin-left: 30px; margin-bottom: 7px;">
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_joy.png" class="similar_icon"/><br><p class="emotion_font"><%= @my_feeling_icon_count[0].size %>곡</p></div>
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_sad.png" class="similar_icon"/><br><p class="emotion_font"><%= @my_feeling_icon_count[1].size %>곡</p></div>
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_stress.png" class="similar_icon"/><br><p class="emotion_font"><%= @my_feeling_icon_count[2].size %>곡</p></div>                    
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_lovely.png" class="similar_icon"/><br><p class="emotion_font"><%= @my_feeling_icon_count[3].size %>곡</p></div>
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_etc.png" class="similar_icon"/><br><p class="emotion_font"><%= @my_feeling_icon_count[4].size %>곡</p></div>
+                </div>
+            </div>
+          </center>
+          <!--마이 리스트-->
+          <div id="carousel-example-vertical1" class="carousel vertical slide" data-interval="false" style="padding-left: 10px; padding-right: 10px;">
+            <% @t = 0 %>
+            <center>
+              <div class="carousel-inner" style="margin-left: 0px; width: 280px;" role="listbox" data-interval="false">
+              <!-- 만약 페이지 갯수가 1페이지 보다 많은데 4배수의 갯수라면 -->
+              <% if ((@current_user_list.size/4) >= 1) && ((@current_user_list.size%4) == 0) %>
+                <div class="item active">
+                  <% for s in 1..4 %>
+                  <div class="row">
+                      <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                      <% if @current_user_list_album_img[@t].nil? || @current_user_list_album_img[@t] == "" %>
+                        <img src="/image/whale_character_1.png" class="similar_albumart">
+                      <% else %>
+                        <img src="<%= @current_user_list_album_img[@t] %>" class="similar_albumart">
+                      <% end %>
+                      </div>
+                      <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                        <div class="similar_song">
+                          <p class="similar_tag">#소리질러!</p>
+                          <p class="similar_content"><span class="similar_songname"><%= @current_user_list_title[@t] %></span> - <%= @current_user_list_singer[@t] %></p>
+                        </div>
+                      </div>
+                    </div>
+                    <% @t = @t + 1 %>
+                  <% end %>
+                </div>
+                <!-- 두번째 이후부터 보이는 페이지에 대하여 -->
+                <% for a in (1..((@current_user_list.size/4)-1)) %>
+                  <div class="item">
+                  <!-- 카드 리스트 첫줄-->
+                  <% for s in 1..4 %>
+                  <div class="row">
+                    <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                      <% if @current_user_list_album_img[@t].nil? || @current_user_list_album_img[@t] == "" %>
+                        <img src="/image/whale_character_1.png" class="similar_albumart">
+                      <% else %>
+                        <img src="<%= @current_user_list_album_img[@t] %>" class="similar_albumart">
+                      <% end %>
+                    </div>
+                    <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                      <div class="similar_song">
+                        <p class="similar_tag">#소리질러!</p>
+                        <p class="similar_content"><span class="similar_songname"><%= @current_user_list_title[@t] %></span> - <%= @current_user_list_singer[@t] %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <% @t = @t + 1 %>
+                  <% end %>
+                  </div>
+                <% end %>  
+                
+              <!-- 만약 페이지가 1페이지를 넘고, 나머지가 0이 아니라면 -->      
+              <% elsif ((@current_user_list.size/4) >= 1) && ((@current_user_list.size%4) != 0) %>    
+                <div class="item active">
+                  <% for s in 1..4 %>
+                  <div class="row">
+                      <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                        <% if @current_user_list_album_img[@t].nil? || @current_user_list_album_img[@t] == "" %>
+                        <img src="/image/whale_character_1.png" class="similar_albumart">
+                        <% else %>
+                        <img src="<%= @current_user_list_album_img[@t] %>" class="similar_albumart">
+                        <% end %>
+                      </div>
+                      <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                        <div class="similar_song">
+                          <p class="similar_tag">#소리질러!</p>
+                          <p class="similar_content"><span class="similar_songname"><%= @current_user_list_title[@t] %></span> - <%= @current_user_list_singer[@t] %></p>
+                        </div>
+                                                 
+                      </div>
+                    </div>
+                    <% @t = @t + 1 %>
+                  <% end %>
+                </div>
+              <!-- 두번째 이후부터 보이는 페이지에 대하여 -->
+                <% for a in (1..(@current_user_list.size/4)) %> 
+                  <div class="item">
+                  <!-- 카드 리스트 첫줄-->
+                  <% for s in 1..4 %>
+                  <div class="row">
+                    <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                      <% if @current_user_list_album_img[@t].nil? || @current_user_list_album_img[@t] == "" %>
+                        <img src="/image/whale_character_1.png" class="similar_albumart">
+                      <% else %>
+                        <img src="<%= @current_user_list_album_img[@t] %>" class="similar_albumart">
+                      <% end %>
+                    </div>
+                    <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                      <div class="similar_song">
+                        <p class="similar_tag">#소리질러!</p>
+                        <p class="similar_content"><span class="similar_songname"><%= @current_user_list_title[@t] %></span> - <%= @current_user_list_singer[@t] %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <% @t = @t + 1 %>
+                  <% end %>
+                  </div>
+                <% end %>  
+              <!-- 만약 1페이지를 안넘는다면 -->
+              <% else %>
+                <div class="item active">
+                  <% for s in 1..4 %>
+                  <div class="row">
+                      <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                        <% if @current_user_list_album_img[@t].nil? || @current_user_list_album_img[@t] == "" %>
+                          <img src="/image/whale_character_1.png" class="similar_albumart">
+                        <% else %>
+                          <img src="<%= @current_user_list_album_img[@t] %>" class="similar_albumart">
+                        <% end %>
+                      </div>
+                      <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                        <div class="similar_song">
+                          <p class="similar_tag">#소리질러!</p>
+                          <p class="similar_content"><span class="similar_songname"><%= @current_user_list_title[@t] %></span> - <%= @current_user_list_singer[@t] %></p>
+                        </div>
+                      </div>
+                    </div>
+                    <% @t = @t + 1 %>
+                  <% end %>
+                </div>
+              <% end %>              
+              </div>  
+            </center>
+            <!-- 내 노래목록 스크롤 -->
+            <a class="up carousel-control" href="#carousel-example-vertical1" style="left: 265px; bottom: 85%;" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="down carousel-control" href="#carousel-example-vertical1"  style="left: 265px; top: 85%;" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--일치율-->
+      <div class="col-xs-4">
+        <center>
+            <p class="similar_text"><%= current_user.nickname %>님의 리스트와 <%= @percent_size %>% 일치하는<br>다른 회원님의 리스트 입니다.</p>
+            <div class="row">
+              <div class="col-xs-2" style="padding-left:0px; padding-right:0px;">            
+                <img src="/image/dotline.png" class="similar_dotline">
+              </div>
+              <div class="col-xs-8">
+              <p style = "cursor:pointer"><div class="similar_value"><span class="similar_circle"><%= @percent_size %>%</span></div></p>
+              </div>
+              <div class="col-xs-2">
+              </div>            
+            </div>
+            <div class="row">
+              <p class="similar_text">다른 리스트가 궁금하다면? <b>중앙의 하얀원</b>을 클릭해보세요!</p>
+            </div>
+        </center>
+      </div>
+      <!--랜덤유저리스트-->
+      <div class="col-xs-4">
+        <div class="your_list">
+          <!--로고-->
+          <img src="/image/whale_character_1.png" class="list_logo"/>
+          <!--유저 아이디-->
+          <center>
+            <div class="similar_user_info">
+              <p class="similar_username"><b><%= @pick_random_one_user.nickname %></b>님의 라인업 <img src="/image/song_1.png" class="small_icon"><%= @pick_random_one_user_title.size %></p>
+                <div class="row" style="padding-top:7px; margin-left: 30px; margin-bottom: 7px;">
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_joy.png" class="similar_icon"/><br><p class="emotion_font"><%= @your_feeling_icon_count[0].size %>곡</p></div>
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_sad.png" class="similar_icon"/><br><p class="emotion_font"><%= @your_feeling_icon_count[1].size %>곡</p></div>
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_stress.png" class="similar_icon"/><br><p class="emotion_font"><%= @your_feeling_icon_count[2].size %>곡</p></div>                    
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_lovely.png" class="similar_icon"/><br><p class="emotion_font"><%= @your_feeling_icon_count[3].size %>곡</p></div>
+                  <div class="col-xs-2" style="padding:0px;"><img src="/image/icon/plustolist_icon_etc.png" class="similar_icon"/><br><p class="emotion_font"><%= @your_feeling_icon_count[4].size %>곡</p></div>
+                </div>
+            </div>
+          </center>
+          <!--마이 리스트-->
+          <div id="carousel-example-vertical2" class="carousel vertical slide" data-interval="false" style="padding-left: 10px; padding-right: 10px;">
+            <% @p = 0 %>
+            <center>
+              <div class="carousel-inner" style="margin-left: 0px; width: 280px;" role="listbox" data-interval="false">
+              <!-- 만약 페이지 갯수가 1페이지 보다 많은데 4배수의 갯수라면 -->
+              <% if ((@pick_random_one_user.lists.size/4) >= 1) && ((@pick_random_one_user.lists.size%4) == 0) %>
+                <div class="item active">
+                  <% for s in 1..4 %>
+                  <div class="row">
+                      <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                        <img src="/image/samsmith.jpg" class="similar_albumart">
+                      </div>
+                      <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                        <div class="similar_song">
+                          <p class="similar_tag">#소리질러!</p>
+                          <p class="similar_content"><span class="similar_songname"><%= @pick_random_one_user_title[@p] %></span> - <%= @pick_random_one_user_singer[@p] %></p>
+                        </div>
+                      </div>
+                    </div>
+                    <% @p = @p + 1 %>
+                  <% end %>
+                </div>
+                <!-- 두번째 이후부터 보이는 페이지에 대하여 -->
+                <% for a in (1..((@pick_random_one_user.lists.size/4)-1)) %>
+                  <div class="item">
+                  <!-- 카드 리스트 첫줄-->
+                  <% for s in 1..4 %>
+                  <div class="row">
+                    <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                      <img src="/image/samsmith.jpg" class="similar_albumart">
+                    </div>
+                    <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                      <div class="similar_song">
+                        <p class="similar_tag">#소리질러!</p>
+                        <p class="similar_content"><span class="similar_songname"><%= @pick_random_one_user_title[@p] %></span> - <%= @pick_random_one_user_singer[@p] %></p>
+                      </div>
+                       
+                    </div>
+                  </div>
+                  <% @p = @p + 1 %>
+                  <% end %>
+                  </div>
+                  
+                <% end %>  
+                
+              <!-- 만약 페이지가 1페이지를 넘고, 나머지가 0이 아니라면 -->      
+              <% elsif ((@pick_random_one_user.lists.size/4) >= 1) && ((@pick_random_one_user.lists.size%4) != 0) %>    
+                <div class="item active">
+                  <% for s in 1..4 %>
+                  <div class="row">
+                      <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                        <img src="/image/samsmith.jpg" class="similar_albumart">
+                      </div>
+                      <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                        <div class="similar_song">
+                          <p class="similar_tag">#소리질러!</p>
+                          <p class="similar_content"><span class="similar_songname"><%= @pick_random_one_user_title[@p] %></span> - <%= @pick_random_one_user_singer[@p] %></p>
+                        </div>
+                       
+                      </div>
+                    </div>
+                    <% @p = @p + 1 %>
+                  <% end %>
+                </div>
+              <!-- 두번째 이후부터 보이는 페이지에 대하여 -->
+                <% for a in (1..(@pick_random_one_user.lists.size/4)) %> 
+                  <div class="item">
+                  <!-- 카드 리스트 첫줄-->
+                  <% for s in 1..4 %>
+                  <div class="row">
+                    <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                      <img src="/image/samsmith.jpg" class="similar_albumart">
+                    </div>
+                    <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                      <div class="similar_song">
+                        <p class="similar_tag">#소리질러!</p>
+                        <p class="similar_content"><span class="similar_songname"><%= @pick_random_one_user_title[@p] %></span> - <%= @pick_random_one_user_singer[@p] %></p>
+                      </div>
+                     
+                    </div>
+                  </div>
+                  <% @p = @p + 1 %>
+                  <% end %>
+                  </div>
+                <% end %>  
+              <!-- 만약 1페이지를 안넘는다면 -->
+              <% else %>
+                <div class="item active">
+                  <% for s in 1..4 %>
+                  <div class="row">
+                      <div class="col-xs-3" style="padding-right: 0px; padding-left: 20px; padding-bottom: 7px;">
+                        <img src="/image/samsmith.jpg" class="similar_albumart">
+                      </div>
+                      <div class="col-xs-9" style="padding-left: 8px; padding-right: 0px;">
+                        <div class="similar_song">
+                          <p class="similar_tag">#소리질러!</p>
+                          <p class="similar_content"><span class="similar_songname"><%= @pick_random_one_user_title[@p] %></span> - <%= @pick_random_one_user_singer[@p] %></p>
+                        </div>
+                       
+                      </div>
+                      <% @p = @p + 1 %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>              
+              </div>  
+            </center>
+            <!-- 내 노래목록 스크롤 -->
+            <a class="up carousel-control" href="#carousel-example-vertical2" style="left: 276px; bottom: 85%;" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="down carousel-control" href="#carousel-example-vertical2"  style="left: 276px; top: 85%;" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      </center>
+    </div>
+  </div>
+</div>
+
+
+<script>
+		$(function(){
+		$(".similar_value").click(function(){
+			  $.ajax({
+			          type: 'post'
+			        , url: '/whale/similar_modal.html'
+			        , dataType : 'html'
+			        , success: function(data) {
+			        	$(".your_list").html(data);
+			          }
+			  });	
+		})		
+})
+
+
+</script>

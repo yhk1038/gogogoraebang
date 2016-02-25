@@ -1,0 +1,33 @@
+<%= render :partial => 'whale/navbar' %>
+<div class="tagsearch">
+  <center>
+    <!--알약 선택 기능-->
+    <div class="row">
+      <div class="col-xs-5">
+      </div>
+      <div class="col-xs-1">
+        <a href="tagsearch"><img src="/image/icon/white_emotion.png"></a>
+      </div>
+      <div class="col-xs-1" style="padding-left: 0px;">
+        <a href="tagsearch2"><img src="/image/icon/blue_hash.png"></a>
+      </div>
+      <div class="col-xs-5">
+      </div>
+    </div>
+    <br>
+    <p class="ts_text">검색하고자 하는 <b style="font-size:16px">해쉬태그</b>를 입력해주세요</p>
+    <!--감정선택-->
+    <div class="row">
+        <center>
+          <form action="/whale/search" method="POST">
+            <input type="text" class="tagsearch_input"   name="">
+              <img src="/image/icon/search_icon.png">
+            </input>
+          </form>
+        </center>
+
+    </div>
+    
+    
+  </center>
+</div>

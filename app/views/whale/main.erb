@@ -1,0 +1,253 @@
+<%= render :partial => 'whale/navbar' %>
+
+<div class="main">
+
+  <!--유저 토탈-->
+  <div class="row">
+    <div class="col-xs-1">
+      &nbsp;&nbsp;&nbsp;&nbsp;<img src="/image/whale_character_1.png" class="user_logo">    
+    </div>
+    <div class="col-xs-10" style="padding-left: 0px;">
+      <div class="user_total">          
+        <p class="user_total__up"><b><%= current_user.nickname %></b>님의 고!래방 라인업</p>
+        <p class="user_total__down"> <img src="/image/song_1.png" class="small_icon"> <%= @all_song_size %> &nbsp;
+        <img src="/image/icon/joy_blue.png" class="small_icon"> <%= @feeling_icon_count[0].size %>
+        <img src="/image/icon/lovely_blue.png" class="small_icon"> <%= @feeling_icon_count[1].size %>
+        <img src="/image/icon/sad_blue.png" class="small_icon"> <%= @feeling_icon_count[2].size %>
+        <img src="/image/icon/stress_blue.png" class="small_icon"> <%= @feeling_icon_count[3].size %> 
+        <img src="/image/icon/etc_blue.png" class="small_icon"> <%= @feeling_icon_count[4].size %> </p>
+      </div>
+    </div>
+  </div>
+  
+  <!--카드리스트 시작-->
+  <% @t = 0 %>
+  <center>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+      <!-- 만약 페이지 갯수가 1페이지 보다 많은데 8배수의 갯수라면 -->
+        <% if ((@all_song_size/8) >= 1) && ((@all_song_size%8) == 0) %>
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <% for a in (1..((@all_song_size/8)-1)) %>
+          <li data-target="#myCarousel" data-slide-to="<%= a %>"></li>
+          <% end %>
+      <!-- 만약 페이지 갯수가 1페이지 보다 많은데 8배수의 갯수가 아니라면-->  
+        <% elsif ((@all_song_size/8) >= 1) && ((@all_song_size%8) != 0) %>  
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <% for a in (1..(@all_song_size/8)) %>
+          <li data-target="#myCarousel" data-slide-to="<%= a %>"></li>
+          <% end %>
+      <!-- 만약 페이지수가 딱 1개라면 -->
+        <% else %>
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <% end %>  
+      </ol>
+    
+      <!-- 보여지는 카드 내용 -->
+      <div class="carousel-inner" role="listbox">
+      <!-- 만약 페이지가 1페이지를 넘는다면 -->
+      <% if ((@all_song_size/8) >= 1) && ((@all_song_size%8) == 0) %>
+        <!-- 첫번째 보이는 페이지에 대하여 -->
+        <div class="item active">
+        <!-- 카드 리스트 첫줄-->
+          <div id="outside" class="row">
+            <% for s in 1..8 %>
+            <div class="col-xs-3">
+              <div class="card_box">
+                <p class="card_hash">#비장의카드</p>
+                <% if @all_song_list_img_array[@t].nil? || @all_song_list_img_array[@t]==""  %>
+                <img src="/image/albumart_1.png" class="card_image"/>
+                <% else %>
+                <img src="<%= @all_song_list_img_array[@t] %>" class="card_image"/>
+                <% end %>
+                <p class="card_song"><%= @all_song_list_title_array[@t] %><br></p>
+                  <div class="row">
+                  <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3">
+                      <input type="image" src="<%= @all_song_feeling_content[@t] %>" class="card_emotion">
+                    </div>
+                  <% end %>  
+                    <div class="col-xs-6" style="padding:0px">
+                      <p class="card_singer"><%= @all_song_list_singer_array[@t] %></p>
+                    </div>
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" style="padding-left: 15px; margin-top: 7px;">
+                      <input type="image" src="/image/icon/trash_1.png" class="card_trash">
+                    </div>
+                    <% end %>  
+                  </div>
+                <% @t = @t+1 %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>  
+        <!-- 두번째 이후부터 보이는 페이지에 대하여 -->
+          <% for a in (1..((@all_song_size/8)-1)) %>
+            <div class="item">
+              <!-- 카드 리스트 첫줄-->
+              <div id="outside" class="row">
+                <% for s in 1..8 %>
+                <div class="col-xs-3">
+                  <div class="card_box">
+                <p class="card_hash">#비장의카드</p>
+                <% if @all_song_list_img_array[@t].nil? || @all_song_list_img_array[@t]==""  %>
+                <img src="/image/albumart_1.png" class="card_image"/>
+                <% else %>
+                <img src="<%= @all_song_list_img_array[@t] %>" class="card_image"/>
+                <% end %>
+                <p class="card_song"><%= @all_song_list_title_array[@t] %><br></p>
+                  <div class="row">
+                  <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" >
+                      <input type="image" src="<%= @all_song_feeling_content[@t] %>" class="card_emotion">
+                    </div>
+                    <% end %>
+                    <div class="col-xs-6" style="padding:0px">
+                      <p class="card_singer"><%= @all_song_list_singer_array[@t] %></p>
+                    </div>
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" style="padding-left: 15px; margin-top: 7px;">
+                        <input type="image" src="/image/icon/trash_1.png" class="card_trash">
+                      </div>
+                    <% end %>  
+                  </div>
+                <% @t = @t+1 %>
+              </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>  
+            
+      <!-- 만약 페이지가 1페이지를 넘고, 나머지가 0이 아니라면 -->      
+      <% elsif ((@all_song_size/8) >= 1) && ((@all_song_size%8) != 0) %>      
+        <!-- 첫번째 보이는 페이지에 대하여 -->
+        <div class="item active">
+        <!-- 카드 리스트 첫줄-->
+          <div id="outside" class="row">
+            <% for s in 1..8 %>
+            <div class="col-xs-3">
+              <div class="card_box">
+                <p class="card_hash">#비장의카드</p>
+                <% if @all_song_list_img_array[@t].nil? || @all_song_list_img_array[@t]==""  %>
+                <img src="/image/albumart_1.png" class="card_image"/>
+                <% else %>
+                <img src="<%= @all_song_list_img_array[@t] %>" class="card_image"/>
+                <% end %>
+                <p class="card_song"><%= @all_song_list_title_array[@t] %><br></p>
+                  <div class="row">
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" >
+                      <input type="image" src="<%= @all_song_feeling_content[@t] %>" class="card_emotion">
+                    </div>
+                    <% end %>
+                    <div class="col-xs-6" style="padding:0px">
+                      <p class="card_singer"><%= @all_song_list_singer_array[@t] %></p>
+                    </div>
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" style="padding-left: 15px; margin-top: 7px;">
+                        <input type="image" src="/image/icon/trash_1.png" class="card_trash">
+                      </div>
+                    <% end %>  
+                  </div>
+                <% @t = @t+1 %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>  
+        <!-- 두번째 이후부터 보이는 페이지에 대하여 -->
+          <% for a in (1..(@all_song_size/8)) %>
+            <div class="item">
+              <!-- 카드 리스트 첫줄-->
+              <div id="outside" class="row">
+                <% for s in 1..8 %>
+                <div class="col-xs-3">
+                  <div class="card_box">
+                <p class="card_hash">#비장의카드</p>
+                <% if @all_song_list_img_array[@t].nil? || @all_song_list_img_array[@t]==""  %>
+                <img src="/image/albumart_1.png" class="card_image"/>
+                <% else %>
+                <img src="<%= @all_song_list_img_array[@t] %>" class="card_image"/>
+                <% end %>
+                <p class="card_song"><%= @all_song_list_title_array[@t] %><br></p>
+                  <div class="row">
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" >
+                      <input type="image" src="<%= @all_song_feeling_content[@t] %>" class="card_emotion">
+                    </div>
+                    <% end %>
+                    <div class="col-xs-6" style="padding:0px">
+                      <p class="card_singer"><%= @all_song_list_singer_array[@t] %></p>
+                    </div>
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" style="padding-left: 15px; margin-top: 7px;">
+                      <input type="image" src="/image/icon/trash_1.png" class="card_trash">
+                    </div>
+                    <% end %>
+                  </div>
+                <% @t = @t+1 %>
+              </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>  
+        
+      <!-- 만약 1페이지를 안넘는다면 -->
+      <% else %>  
+        <!-- 첫번째 보이는 페이지에 대하여 -->
+        <div class="item active">
+        <!-- 카드 리스트 첫줄-->
+          <div id="outside" class="row">
+            <% for s in 1..8 %>
+            <div class="col-xs-3">
+              <div class="card_box">
+                <p class="card_hash">#비장의카드</p>
+                <% if @all_song_list_img_array[@t].nil? || @all_song_list_img_array[@t]==""  %>
+                <img src="/image/albumart_1.png" class="card_image"/>
+                <% else %>
+                <img src="<%= @all_song_list_img_array[@t] %>" class="card_image"/>
+                <% end %>
+                <p class="card_song"><%= @all_song_list_title_array[@t] %><br></p>
+                  <div class="row">
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" >
+                      <input type="image" src="<%= @all_song_feeling_content[@t] %>" class="card_emotion">
+                    </div>
+                    <% end %>
+                    <div class="col-xs-6" style="padding:0px">
+                      <p class="card_singer"><%= @all_song_list_singer_array[@t] %></p>
+                    </div>
+                    <% unless @all_song_feeling_content[@t].nil? %>
+                    <div class="col-xs-3" style="padding-left: 15px; margin-top: 7px;">
+                      <input type="image" src="/image/icon/trash_1.png" class="card_trash">
+                    </div>
+                    <% end %>
+                    
+                  </div>
+                <% @t = @t+1 %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>  
+        <!-- 두번째 이후부터 보이는 페이지에 대하여 -->  
+      <% end %>
+
+      </div>
+    
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background-image:none; width: 50px;">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background-image:none; width: 50px;">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </center>
+</div>

@@ -1,0 +1,104 @@
+<%= render :partial => 'whale/navbar' %>
+<div class="tagsearch">
+  <center>
+    <!--알약 선택 기능-->
+    <div class="row">
+      <div class="col-xs-5">
+      </div>
+      <div class="col-xs-1">
+        <a href="tagsearch"><img src="/image/icon/blue_emotion.png"></a>
+      </div>
+      <div class="col-xs-1" style="padding-left: 0px;">
+        <a href="tagsearch2"><img src="/image/icon/white_hash.png/"></a>
+      </div>
+      <div class="col-xs-5">
+      </div>
+    </div>
+    <br>
+    <p class="ts_text">검색하고자 하는 <b style="font-size:16px">감정상태</b>를 클릭해주세요</p>
+    <!--감정선택-->
+    <div class="row">
+    <div class="emotion_choice">
+      <div class="col-xs-1"></div>
+      <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion tag joy"><p class="emotion_font">신남</p></div>
+      <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion tag lovely"><p class="emotion_font">러블리</p></div>
+      <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion tag sad"><p class="emotion_font">슬픔</p></div>                    
+      <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion tag stress"><p class="emotion_font">스트레스</p></div>
+      <div class="col-xs-2" style="padding:0px;"><input type="radio" name="emotion_check" class="emotion tag etc"><p class="emotion_font">기타</p></div>
+      <div class="col-xs-1"></div>
+    </div>
+    </div>
+    
+    <div class="post_div"></div>
+    
+    
+    
+  </center>
+</div>
+
+
+
+
+<script>
+$(function(){
+		$(".joy").click(function(){
+			  $.ajax({
+			          type: 'post'
+			        , url: '/whale/tagsearch_joy.html'
+			        , datatype : 'html'
+			        , success: function(data) {
+			        	$(".post_div").html(data);
+			          }     
+			  }); 
+		})		
+})
+$(function(){
+		$(".lovely").click(function(){
+			  $.ajax({
+			          type: 'post'
+			        , url: '/whale/tagsearch_lovely.html'
+			        , datatype : 'html'
+			        , success: function(data) {
+			        	$(".post_div").html(data);
+			          }     
+			  }); 
+		})		
+})
+$(function(){
+		$(".sad").click(function(){
+			  $.ajax({
+			          type: 'post'
+			        , url: '/whale/tagsearch_sad.html'
+			        , datatype : 'html'
+			        , success: function(data) {
+			        	$(".post_div").html(data);
+			          }     
+			  }); 
+		})		
+})
+$(function(){
+		$(".stress").click(function(){
+			  $.ajax({
+			          type: 'post'
+			        , url: '/whale/tagsearch_stress.html'
+			        , datatype : 'html'
+			        , success: function(data) {
+			        	$(".post_div").html(data);
+			          }     
+			  }); 
+		})		
+})
+$(function(){
+		$(".etc").click(function(){
+			  $.ajax({
+			          type: 'post'
+			        , url: '/whale/tagsearch_etc.html'
+			        , datatype : 'html'
+			        , success: function(data) {
+			        	$(".post_div").html(data);
+			          }     
+			  }); 
+		})		
+})
+
+</script>
