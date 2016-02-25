@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -6,7 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-=======
 Song.create(number: 78121, title: "우리에겐", singer: "더클래식", album_img: "")
 Song.create(number: 48802, title: "우리 집 갈래? ", singer: "데프콘", album_img: "")
 Song.create(number: 76496, title: "우정의 무대", singer: "데프콘", album_img: "")
@@ -6873,5 +6871,3 @@ Song.create(number: 88389, title: "공드리", singer: "혁오", album_img: "")
 Song.create(number: 88401, title: "꽃잎 점", singer: "에이핑크", album_img: "")
 Song.create(number: 88413, title: "가질 수 없는 너 ", singer: "김연우", album_img: "")
 Song.create(number: 88432, title: "끌려", singer: "에이핑크", album_img: "")
-
->>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
