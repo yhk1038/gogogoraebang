@@ -7,16 +7,16 @@
     ----------------------------------------------------------------- 
 
 
-Welcome to your Rails project on Cloud9 IDE!
+Welcome to your Rails project **goraebang** on Cloud9 IDE!
 
-To get started, just do the following:
+1. Version
+    160226 07:26 START_VERSION (get project and set it on Cloud9)
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-<<<<<<< HEAD
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://goraebang-yhk1038.c9users.io/).
-=======
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://balabalabang-goraebang.c9.io/).
->>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
+2. Team
+    4D, for dream!(yonghyun, byeongjae, changhyun, hyunmin, hyaebin)
+
+3. Purpose
+    The team, 4D, runs this GoRaeBang prj for musick curation service launching on lean start-up program with Startuplab, PRIMER.
 
 Happy coding!
 The Cloud9 IDE team

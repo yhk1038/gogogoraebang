@@ -21,10 +21,7 @@ module Workspace
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-<<<<<<< HEAD
-=======
     config.i18n.default_locale = :ko
->>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

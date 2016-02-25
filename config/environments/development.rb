@@ -1,11 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-<<<<<<< HEAD
-=======
   #추가한 부분(병재,devise)
   config.action_mailer.default_url_options = { host: 'balabalabang-goraebang.c9.io', port: 80}
->>>>>>> 32fe25cf078930548963b358c49a3d3daa74987c
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
