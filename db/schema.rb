@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150917124328) do
     t.integer  "song_id"
     t.string   "feeling_content"
     t.integer  "feeling_id"
+    t.string   "list_hashtag"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

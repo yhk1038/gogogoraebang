@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'seed_dump'
 gem 'devise-i18n'
 gem 'similar_text', '~> 0.0.4'
 gem 'devise'
