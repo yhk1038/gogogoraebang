@@ -1,5 +1,9 @@
 class WhaleController < ApplicationController
 
+  def view_counter
+    redirect_to '/whale/login'
+  end
+  
   def login
     unless current_user.nil?
     redirect_to :action => "firstpage"
